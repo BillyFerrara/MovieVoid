@@ -1,1 +1,11 @@
 <strong>Welcome <%=@user.username %></strong>
+
+
+
+
+<br>
+<% if current_user != set_user %>
+<%= link_to "login", login_path %>
+   <% else %>
+    <%= link_to "logout", sessions_path, method: :delete %>
+<% end %>

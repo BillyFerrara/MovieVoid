@@ -12,4 +12,10 @@ class SessionsController < ApplicationController
             render login_path
         end 
     end 
+
+    def destroy
+        session.delete(:user_id)
+    end 
+
+
 end

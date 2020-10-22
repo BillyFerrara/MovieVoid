@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    helper_method :set_user
 
     def index
     end 
