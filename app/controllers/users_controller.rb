@@ -4,7 +4,8 @@ class UsersController < ApplicationController
     end 
 
     def show
-        set_user
+        set_user 
+    
     end 
 
     def new
@@ -19,6 +20,15 @@ class UsersController < ApplicationController
         else 
             render :new 
         end 
+    end 
+
+    def edit 
+        if current_user != set_user
+            redirect_to current_user
+        end 
+    end 
+
+    def update
     end 
 
     private
