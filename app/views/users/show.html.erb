@@ -1,4 +1,8 @@
+<% if current_user != set_user %>
+<strong>We Miss You! <%= @user.username %> </strong>
+<% else %>
 <strong>Welcome <%=@user.username %></strong>
+<% end %>
 
 
 
