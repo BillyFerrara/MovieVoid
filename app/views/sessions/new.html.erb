@@ -1,0 +1,9 @@
+<%= form_tag sessions_path do %>
+    <%= label_tag "Username" %>
+    <%= text_field_tag :username %>
+    <%= label_tag "Password" %>
+    <%= text_field_tag :password %>
+    <%= submit_tag "Submit" %>
+<% end %>
+
+<%# Use a form_tag when their is no object being passed to our form. In this case, we are rendering the login page using the sessions_path outlined in routes.rb %>
