@@ -23,4 +23,5 @@ end
 end 
 
 20.times do 
-    Review.create(rating: rand(1..10), content: Faker::Quotes::Shakespeare, user_id: User.all.sample.id, movie_ie: Movie.all.sample.id)
+    Review.create(rating: rand(1..10), content: Faker::Quotes::Shakespeare.hamlet_quote, user_id: User.all.sample.id, movie_id: Movie.all.sample.id)
+end 

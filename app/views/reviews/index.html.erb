@@ -1,0 +1,16 @@
+<ul>
+<% @reviews.each do |r| %>
+
+<br>
+<br>
+<li> <strong>Movie:</strong> <%= r.movie.title %> 
+    <br>
+ <li><strong>Rating:</strong> <%= r.rating %>
+    <br>
+<li> <strong>Review:</strong> <%= r.content %>
+
+
+<% end %>
+
+
+</ul>
