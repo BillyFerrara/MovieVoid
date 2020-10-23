@@ -7,6 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+
+User.destroy_all
+Movie.destroy_all
+Review.destroy_all
+
+
+
 20.times do 
     Movie.create(title: Faker::Movie.title )
 end
@@ -14,3 +21,6 @@ end
 10.times do 
     User.create(username: Faker::Superhero.name, password: "super")
 end 
+
+20.times do 
+    Review.create(rating: rand(1..10), content: Faker::Quotes::Shakespeare, user_id: User.all.sample.id, movie_ie: Movie.all.sample.id)

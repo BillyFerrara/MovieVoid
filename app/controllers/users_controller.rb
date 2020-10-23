@@ -5,8 +5,7 @@ class UsersController < ApplicationController
     end 
 
     def show
-        set_user 
-    
+        set_user
     end 
 
     def new
@@ -35,7 +34,7 @@ class UsersController < ApplicationController
     private
 
     def set_user
-        @user = User.find(params[:id])
+       @user = User.find(params[:id])
     end 
 
     def user_params
