@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :movies
   resources :reviews
-  
+
   resources :users do 
     resources :reviews
     resources :movies
@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   post "sessions", to: "sessions#create", as: "sessions"
 
   delete "sessions", to: "sessions#destroy", as: "logout"
+
 end 

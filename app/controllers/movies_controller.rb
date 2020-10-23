@@ -16,7 +16,6 @@ class MoviesController < ApplicationController
         @movie = Movie.new(movie_params)
         if @movie.save 
             @user = current_user 
-            # session[:user_id] = @user.id 
             
              redirect_to @user
             

@@ -10,10 +10,15 @@ class ReviewsController < ApplicationController
     end 
 
     def new
-        @review = Review.new(user_id: params[:user_id])
+        @review = Review.new
     end 
 
     def create
+        @review = Review.new(review_params)
+        @review.save 
+        @user = current_user
+        redirect_to @user
+        
     end 
 
     private
