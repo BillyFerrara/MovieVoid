@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :movies
   resources :reviews
+  
   resources :users do 
     resources :reviews
+    resources :movies
   end 
 
   # http request     controller       path

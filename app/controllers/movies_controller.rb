@@ -7,4 +7,27 @@ class MoviesController < ApplicationController
             @movies = Movie.all 
         end 
     end 
+
+    def new
+        @movie = Movie.new
+    end 
+
+    def create 
+        @movie = Movie.new(movie_params)
+        if @movie.save 
+            @user = current_user 
+            # session[:user_id] = @user.id 
+            
+             redirect_to @user
+            
+        else 
+            render :new 
+        end 
+    end 
+
+    private
+
+    def movie_params
+        params.require(:movie).permit(:title)
+    end 
 end
