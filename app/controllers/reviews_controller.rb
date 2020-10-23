@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     end 
 
     def new
-        @review = Review.new
+        @review = Review.new(user_id: params[:user_id])
     end 
 
     def create

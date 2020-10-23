@@ -17,6 +17,7 @@ class MoviesController < ApplicationController
         if @movie.save 
             @user = current_user 
             
+            
              redirect_to @user
             
         else 
