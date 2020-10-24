@@ -12,11 +12,14 @@ Rails.application.routes.draw do
   get "login", to: "sessions#new", as: "login"
   post "sessions", to: "sessions#create", as: "sessions"
 
+  get 'auth/github' 
+  match '/auth/:provider/callback', to:'sessions#create', via: [:get, :post]
+  
   patch 'reviews/:id', to: 'reviews#update'
 
   get "homepage", to: "home#index", as: "homepage"
   
-  # delete "reviews", to: "reviews#destroy", as: "delete"
+  
   delete "sessions", to: "sessions#destroy", as: "logout"
 
   root 'home#index'
