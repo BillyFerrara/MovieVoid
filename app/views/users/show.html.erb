@@ -11,11 +11,14 @@
 <% if current_user != set_user %>
 <%= link_to "login", login_path %>
    <% else %>
-    <%= link_to "logout", sessions_path, method: :delete %>
+   
     <br>
-    Link to User's Reviews
+    <%= link_to "My Reviews", user_reviews_path(@user.id) %>
     <br>
-    Link to Add New Review 
+    <%= link_to "Leave A Review", new_user_review_path(@user.id) %>
     <br>
-    Link to Add New Movie
+    <%= link_to "Add A Movie", new_user_movie_path(@user.id) %>
+    <br>
+    <br>
+     <%= link_to "Logout", sessions_path, method: :delete %>
 <% end %>
