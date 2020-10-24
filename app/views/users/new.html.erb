@@ -1,11 +1,2 @@
-<%= form_for @user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <%=f.label :password %>
-    <%= f.password_field :password %>
-    <%=f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-    <%= f.submit %>
-<% end %>
-
+<%= render "form" %>
 <%= link_to "Login", login_path %>

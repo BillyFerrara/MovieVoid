@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     helper_method :set_user
 
     def index
+        @users = User.all
     end 
 
     def show
@@ -29,6 +30,12 @@ class UsersController < ApplicationController
     end 
 
     def update
+        set_user
+        if @user.update_attributes(user_params)
+            redirect_to @user 
+        else 
+            render 'edit'
+        end 
     end 
 
     private

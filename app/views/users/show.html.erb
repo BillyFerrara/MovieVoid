@@ -13,12 +13,13 @@
    <% else %>
    
     <br>
-    <%= link_to "My Reviews", user_reviews_path(@user.id) %>
+    <%= link_to "My Reviews", user_reviews_path(current_user) %>
     <br>
-    <%= link_to "Leave A Review", new_user_review_path(@user.id) %>
+    <%= link_to "Leave A Review", new_user_review_path(current_user) %>
     <br>
-    <%= link_to "Add A Movie", new_user_movie_path(@user.id) %>
+    <%= link_to "Add A Movie", new_user_movie_path(current_user) %>
     <br>
     <br>
+    <%= link_to "Edit My Account", edit_user_path(current_user)%>
      <%= link_to "Logout", sessions_path, method: :delete %>
 <% end %>

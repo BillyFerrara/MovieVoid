@@ -12,9 +12,11 @@ Rails.application.routes.draw do
   get "login", to: "sessions#new", as: "login"
   post "sessions", to: "sessions#create", as: "sessions"
 
-
+  get "homepage", to: "home#index", as: "homepage"
   
 
   delete "sessions", to: "sessions#destroy", as: "logout"
+
+  root 'home#index'
 
 end 
