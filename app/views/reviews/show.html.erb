@@ -1,0 +1,10 @@
+MY REVIEWS
+<br>
+<% @user.reviews.each do |r| %>
+<li><%= r.movie.title%> 
+<% end %>
+
+
+<br>
+<br>
+<%= link_to "My Page", user_path(@user)%>

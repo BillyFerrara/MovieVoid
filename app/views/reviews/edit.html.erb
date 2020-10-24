@@ -1,0 +1,12 @@
+EDIT A REVIEW
+<%= form_for @review do |f| %>
+    <%= f.label :movie %>
+    <%= f.collection_select :movie_id, Movie.all, :id, :title %>
+    <%= f.label :rating %>
+    <%= f.number_field :rating %>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+    <%= f.hidden_field :user_id %>
+    <%= f.submit %>
+<% end %>
+<%= link_to "My Page", user_path(@user)%>

@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+    before_action :set_review, only: :new
 
     def index
         if params[:user_id]
@@ -21,12 +22,33 @@ class ReviewsController < ApplicationController
         
     end 
 
+    def edit 
+         @review = Review.find(current_user.id)
+    end 
+
+    def update
+        @review.update(review_params)
+    end 
+
+    def show
+        @review = current_user.reviews
+    end 
+
+    def destroy
+        @review = current_user.reviews 
+        @review.destroy 
+        redirect_to '/reviews'
+    end 
+
     private
 
     def review_params
         params.require(:review).permit(:rating, :content, :movie_id, :user_id)
     end 
 
+    def set_review
+        @review = Review.find(params[:id])
+    end 
 
 
 end

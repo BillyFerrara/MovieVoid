@@ -9,3 +9,5 @@
 <%= link_to "homepage", homepage_path %>
 
 <% if current_user %>
+    <%= link_to "My Page", user_path(current_user)%>
+<% end %>
