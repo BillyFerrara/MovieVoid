@@ -8,7 +8,8 @@
  <li><strong>Rating:</strong> <%= r.rating %>
     <br>
 <li> <strong>Review:</strong> <%= r.content %>
-    <%= link_to "Edit", edit_user_review_path(current_user, r.id) %>
+    <%= link_to "Edit", edit_user_review_path(current_user, r.id) %> |
+    <%= link_to "Delete", user_review_path(current_user, r.id) , method: :delete, data: {confirm: 'Are you sure?'} %>
 
 
 <% end %>

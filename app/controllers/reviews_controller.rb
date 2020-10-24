@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
         @review = Review.new(review_params)
         @review.save 
         @user = current_user
-        redirect_to @user
+        redirect_to '/reviews'
         
     end 
 
@@ -42,8 +42,8 @@ class ReviewsController < ApplicationController
     end 
 
     def destroy
-        @review = current_user.reviews 
-        @review.destroy 
+        @review = Review.find(params[:id]) 
+        @review.destroy
         redirect_to '/reviews'
     end 
 

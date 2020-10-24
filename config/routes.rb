@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get "homepage", to: "home#index", as: "homepage"
   
-
+  # delete "reviews", to: "reviews#destroy", as: "delete"
   delete "sessions", to: "sessions#destroy", as: "logout"
 
   root 'home#index'
