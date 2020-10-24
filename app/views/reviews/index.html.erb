@@ -8,11 +8,11 @@
  <li><strong>Rating:</strong> <%= r.rating %>
     <br>
 <li> <strong>Review:</strong> <%= r.content %>
-    <%= link_to "Edit", edit_review_path(@reviews)%>
+    <%= link_to "Edit", edit_user_review_path(current_user, r.id) %>
 
 
 <% end %>
 <br>
 <br>
-<%= link_to "My Page", user_path(@user)%>
+<%= link_to "My Page", user_path(current_user)%>
 </ul>

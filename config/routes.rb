@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get "login", to: "sessions#new", as: "login"
   post "sessions", to: "sessions#create", as: "sessions"
 
+  patch 'reviews/:id', to: 'reviews#update'
+
   get "homepage", to: "home#index", as: "homepage"
   
 

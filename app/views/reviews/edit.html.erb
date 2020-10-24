@@ -9,4 +9,4 @@ EDIT A REVIEW
     <%= f.hidden_field :user_id %>
     <%= f.submit %>
 <% end %>
-<%= link_to "My Page", user_path(@user)%>
+<%= link_to "My Page", user_path(current_user)%>
