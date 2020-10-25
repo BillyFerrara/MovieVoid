@@ -5,18 +5,17 @@ class SessionsController < ApplicationController
     def create
 
         if request.env['omniauth.auth']	
-            byebug
             @user = User.find_or_create_by_omniauth(auth)
             session[:user_id] = @user.id
             redirect_to user_path(@user)
-        else 
+        else
         # finds the user then authenticates the user by comparing the password in the db vs the password the user entered
         @user = User.find_by(username: params[:username])
             if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
             redirect_to @user 
             else 
-            redirect_to login_path 
+             redirect_to login_path 
             end
         end 
     end 

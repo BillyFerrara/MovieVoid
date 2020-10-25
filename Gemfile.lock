@@ -134,8 +134,6 @@ GEM
     omniauth (1.9.1)
       hashie (>= 3.4.6)
       rack (>= 1.6.2, < 3)
-    omniauth-facebook (8.0.0)
-      omniauth-oauth2 (~> 1.2)
     omniauth-oauth2 (1.7.0)
       oauth2 (~> 1.4)
       omniauth (~> 1.9)
@@ -246,7 +244,6 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   omniauth
-  omniauth-facebook
   omniauth-github!
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)

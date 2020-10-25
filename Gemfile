@@ -31,7 +31,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'omniauth'
-gem 'omniauth-facebook'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 
 
