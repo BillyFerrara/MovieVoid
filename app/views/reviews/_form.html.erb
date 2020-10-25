@@ -2,9 +2,9 @@
     <%= f.label :movie %>
     <%= f.collection_select :movie_id, Movie.all, :id, :title %>
     <%= f.label :rating %>
-    <%= f.number_field :rating %>
+    <%= f.number_field :rating, required: true %>
     <%= f.label :content %>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, required: true %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.submit %>
 <% end %>

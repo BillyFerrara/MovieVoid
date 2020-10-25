@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     helper_method :set_user
+    
 
     def index
         @users = User.all

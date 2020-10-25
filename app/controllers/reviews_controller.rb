@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    # before_action :set_review, only: [:edit, :update]
+    
 
     def index
         if params[:user_id]
@@ -53,10 +53,7 @@ class ReviewsController < ApplicationController
         params.require(:review).permit(:rating, :content, :movie_id, :user_id)
     end 
 
-    # def set_review
-    #     byebug
-    #     @review = Review.find(params[:id])
-    # end 
+    
 
 
 end
