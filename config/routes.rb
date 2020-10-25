@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   # http request     controller       path
   get "signup", to: "users#new", as: "signup"
   get "login", to: "sessions#new", as: "login"
-  match '/auth/github/callback', to: 'sessions#create', via: [:get, :post]
+  match '/auth/github/', to: 'sessions#create', via: [:get, :post]
   post "sessions", to: "sessions#create", as: "sessions"
 
-  # get 'auth/github', to: "sessions#create"
+  get 'auth/github/callback', to: "sessions#create"
   
   
   
