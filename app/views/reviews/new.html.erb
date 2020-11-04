@@ -1,9 +1,10 @@
+Select The Movie You'd Like To Review!
 <%= form_for @review do |f| %>
 
     <%= f.label :movie %>
     <%= f.collection_select :movie_id, Movie.all, :id, :title %>
     <%= f.label :rating %>
-    <%= f.number_field :rating %>
+    <%= f.number_field :rating, min: 1, max: 10 %>
     <%= f.label :content %>
     <%= f.text_area :content %>
     <%= f.hidden_field :user_id %>

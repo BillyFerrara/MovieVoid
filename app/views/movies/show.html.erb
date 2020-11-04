@@ -1,18 +1,29 @@
+
 <strong><%= @movie.title %></strong>
 <br>
 Number of Reviewers: <strong><%= @movie.users.count %> </strong>
 <br>
 Number of Reviews: <strong><%= @movie.reviews.count %> </strong>
+<br>
+<br>
+What Users Are Saying! <% @movie.reviews.map do |r| %>
+<li> <%= r.content %> - <%= r.user.username %>
+    
+<% end %>
+<br>
+<br>
+ 
 
 <br>
 
 
 
 
-<%= link_to "Add_review", reviews_path %>
+<%= link_to "Add A Review", new_movie_review_path(:movie_id) %>
 <br>
-link_to View_reviews
 <br>
-<%= link_to "My Page", users_path(current_user)%>
+<%= link_to "Movies", movies_path %>
+<br>
+<%= link_to "My Page", user_path(current_user)%>
 <br>
 <%= link_to "Home", homepage_path %>

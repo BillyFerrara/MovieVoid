@@ -1,8 +1,9 @@
-<strong>All Movies</strong>
+<strong>Movies</strong>
 <br>
 <% @movies.each do |m| %>
 
-<li><%= m.title %></li>
+<li><%= m.title %> | <%= link_to "More Details", movie_path(m.id) %></li>
+
 
 <% end %>
 
