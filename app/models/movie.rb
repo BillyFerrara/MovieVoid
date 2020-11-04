@@ -4,4 +4,6 @@ class Movie < ApplicationRecord
 
     validates :title, presence: true
     validates :title, uniqueness: true
+    
+    scope :most_reviews, -> { joins(:reviews).group(:title).order(count_all: :desc).count}
 end

@@ -1,0 +1,18 @@
+<strong><%= @movie.title %></strong>
+<br>
+Number of Reviewers: <strong><%= @movie.users.count %> </strong>
+<br>
+Number of Reviews: <strong><%= @movie.reviews.count %> </strong>
+
+<br>
+
+
+
+
+<%= link_to "Add_review", reviews_path %>
+<br>
+link_to View_reviews
+<br>
+<%= link_to "My Page", users_path(current_user)%>
+<br>
+<%= link_to "Home", homepage_path %>

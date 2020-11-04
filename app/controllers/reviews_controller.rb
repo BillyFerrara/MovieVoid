@@ -11,19 +11,23 @@ class ReviewsController < ApplicationController
     end 
 
     def new
-        @review = Review.new(user_id: params[:user_id])
+        @review = Review.new
     end 
 
     def create
-        @review = Review.new(review_params)
-        @review.save 
-        @user = current_user
-        redirect_to '/reviews'
+        @review = current_user.reviews.build(review_params)
+        if @review.save 
+            redirect_to '/reviews'
+            else 
+            render 'new'
+             end 
+        end 
         
-    end 
+
 
     def edit 
         @review = Review.find(params[:id])
+        
     end 
 
     def update

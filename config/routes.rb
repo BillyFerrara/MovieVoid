@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  resources :movies
+  resources :movies do
+    resources :reviews
+  end 
+  
   resources :reviews
 
   resources :users do 
     resources :reviews
     resources :movies
   end 
+
+  
 
   # http request     controller       path
   get "signup", to: "users#new", as: "signup"
