@@ -1,5 +1,14 @@
 <strong>Movies</strong>
 <br>
+
+<%= form_tag({}, {:method => :get}) do %>
+    <select name = "sort_order">
+    <option>"Enter"</option>
+    <option value = "most_reviewed"> Most Reviews</option>
+     </select>
+     <%= submit_tag %>
+<% end %>
+
 <% @movies.each do |m| %>
 
 <li><%= m.title %> | <%= link_to "More Details", movie_path(m.id) %></li>

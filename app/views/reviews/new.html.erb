@@ -1,8 +1,17 @@
 Select The Movie You'd Like To Review!
+<br>
+
 <%= form_for @review do |f| %>
 
+    
     <%= f.label :movie %>
+ <% if @movie %>
+     <%= @movie.title %>
+     <%= f.hidden_field(:movie_id, :value => params[:movie_id]) %>
+    <% else %> 
     <%= f.collection_select :movie_id, Movie.all, :id, :title %>
+   <% end %>
+
     <%= f.label :rating %>
     <%= f.number_field :rating, min: 1, max: 10 %>
     <%= f.label :content %>

@@ -6,6 +6,14 @@ class MoviesController < ApplicationController
         else
             @movies = Movie.all 
         end 
+            
+        if params[:sort_order] == "most_reviewed"
+
+    
+            @movies = @movies.most_reviews
+            
+        end
+        
     end 
 
     def new
